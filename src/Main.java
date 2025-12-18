@@ -1,15 +1,45 @@
-import static java.lang.String.*;
+import java.util.Arrays;
+import java.util.Scanner;
 
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
-    //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-    // to see how IntelliJ IDEA suggests fixing it.
-    IO.println("Hello and welcome!");
+public class Main{
+    public static void main(String[] args){
 
-    for (int i = 1; i <= 5; i++) {
-        //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-        // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-        IO.println("i = " + i);
+        Student s = new Student();
+
+        s.name = "Sandeep";
+        s.age = 25;
+        s.salary = 21;
+
+        System.out.println(s);
+
+
+
+        //String[] fruit = {"banana", "apple", "mango", "grapes"};
+
+//        Scanner in = new Scanner(System.in);
+//
+//        String[] arr = new String[5];
+//
+//        for(int i = 0; i < arr.length; i++)
+//        {
+//            arr[i] = in.nextLine();
+//        }
+//
+//        Arrays.sort(arr);
+//
+//        for (String s : arr) {
+//            System.out.println(s);
+//        }
+
+//        System.out.println(Arrays.toString(arr));
+
+//        Arrays.sort(fruit);
+//        int length = fruit.length;
+//
+//        for (String i : fruit) {
+//            System.out.print(i + " ");
+//        }
+//
+//        System.out.println(length);
     }
 }
