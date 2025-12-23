@@ -6,8 +6,12 @@ public class CheckSorted {
 
     public static void main(String[] args) {
         int[] arr = { 1, 2, 3,5,5};
-        findAllIndex(arr, 5, 0);
-        System.out.println(list);
+        // findAllIndex(arr, 5, 0);
+        // System.out.println(list);
+        
+        ArrayList<Integer> ans = new ArrayList<>(findAllIndex3(arr, 5, 0));
+        System.out.println(ans);
+
     }
 
     static boolean checkSorted(int[] arr, int index){
@@ -41,17 +45,50 @@ public class CheckSorted {
         }
     }
 
-    static ArrayList<Integer> list = new ArrayList<>();
-    static void findAllIndex(int[] arr, int target, int index){
+    // static ArrayList<Integer> list = new ArrayList<>();
+    // static void findAllIndex(int[] arr, int target, int index){
+
+    //     if(index == arr.length)
+    //         return;
+
+
+    //     if(arr[index] == target){
+    //         list.add(index);
+    //     }
+    //         findAllIndex(arr, target, index + 1);
+    // }
+
+
+    static ArrayList<Integer> findAllIndex2(int[] arr, int target, int index, ArrayList<Integer> list){
 
         if(index == arr.length)
-            return;
+            return list;
 
 
         if(arr[index] == target){
             list.add(index);
         }
-            findAllIndex(arr, target, index + 1);
+        return findAllIndex2(arr, target, index + 1, list);
+    }
+
+    static ArrayList<Integer> findAllIndex3(int[] arr, int target, int index){
+
+        ArrayList<Integer> list = new ArrayList<>();
+
+        if(index == arr.length)
+            return list;
+
+
+        if(arr[index] == target){
+            list.add(index);
+        }
+
+
+        ArrayList<Integer> collectBelow = findAllIndex3(arr, target, index + 1);
+
+        list.addAll(collectBelow);
+
+        return list;
     }
     
     
