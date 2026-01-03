@@ -6,13 +6,20 @@ import java.util.Arrays;
 public class Maze {
 
     static void main(String[] args) {
-//        System.out.println(maze(3, 3));
+        System.out.println(maze(3, 3));
 //        path("", 3, 3);
 
 //        ArrayList<String> ans = pathRet("", 3, 3);
 //        System.out.println(ans);
 
-        System.out.println(pathRetDiagonal("", 3, 3));
+//        System.out.println(pathRetDiagonal("", 3, 3));
+//        boolean[][] maze = new boolean[][]{
+//                {true, true, true},
+//                {true, false, true},
+//                {true, true, true}
+//        };
+//
+//        System.out.println(pathRetDiagonalObs("", maze, 0, 0));
     }
 
     static int maze(int r, int c){
@@ -84,6 +91,31 @@ public class Maze {
 
         if( c > 1){
             list.addAll(pathRetDiagonal(p + "H", r, c - 1));
+        }
+
+        return list;
+    }
+
+
+
+    static ArrayList<String> pathRetDiagonalObs(String p, boolean[][] maze, int r, int c){
+        if(r == maze.length -1  && c == maze[0].length - 1){
+            ArrayList<String> ans = new ArrayList<>();
+            ans.add(p);
+            return ans;
+        }
+
+        ArrayList<String> list = new ArrayList<>();
+
+        if(!maze[r][c])
+            return list;
+
+        if(r < maze.length - 1){
+            list.addAll(pathRetDiagonalObs(p + 'D', maze,r +1, c));
+        }
+
+        if( c < maze[0].length - 1){
+            list.addAll(pathRetDiagonalObs(p + 'R',maze,  r, c + 1));
         }
 
         return list;
