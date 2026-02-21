@@ -1,4 +1,6 @@
 ### IntelliJ IDEA ###
+.idea/
+*.iml
 out/
 !**/src/main/**/out/
 !**/src/test/**/out/
@@ -25,6 +27,12 @@ bin/
 
 ### VS Code ###
 .vscode/
+
+### Java Build Artifacts ###
+*.class
+*.jar
+*.war
+*.ear
 
 ### Mac OS ###
 .DS_Store
